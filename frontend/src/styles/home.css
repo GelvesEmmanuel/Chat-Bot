@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;           
+    margin: 0;
+    background-color: #2C2A4A;
+  }
+  
+  .container-chat {
+    padding: 1rem;
+    background-color: #DABFFF; 
+    border-radius: 8px; 
+  }
+  h1{
+    margin:0 0 0 0 ;
+    color: black;
+    text-align: center;
+  }
+  p{
+    margin: 0 0 5rem 0;
+    text-align: center;
+  }
+
+  button {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:#2C2A4A;
+    color: #DABFFF;
+    display: inline-block;
+    margin: 5px 20px 0 5px;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+
+button:hover {
+    background: #DABFFF;
+    cursor: pointer;
+    border: solid 1px #2C2A4A;
+    color:var(--BJnaranja);
+    text-shadow: 0 0 15px var(--BJnaranja);
+    box-shadow: 0 0 15px var(--Btncolor);
+    transition: all 0.5s ease;
+}
+  
