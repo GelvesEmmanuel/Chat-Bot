@@ -19,7 +19,7 @@ const ChatBot = () => {
   const handleChat = () => {
     if (!query.trim()) return;
 
-    setMessages((prev) => [...prev, { rol: "user", text: query }]);
+    setMessages((prev) => [...prev, { role: "user", text: query }]);
     const found = chats.find(
       (chat) => chat.question.toLowerCase() === query.toLowerCase()
     );
@@ -27,7 +27,7 @@ const ChatBot = () => {
     setMessages((prev) => [
       ...prev,
       {
-        role: "boot",
+        role: "bot",
         text: found ? found.answer : "no encontre respuesta adecuada",
       },
     ]);
@@ -45,7 +45,7 @@ const ChatBot = () => {
         {messages.map((msg, idx) => (
           <div
             key={idx}
-            className={`message.bubble ${
+            className={`message-bubble ${
               msg.role === "user" ? "user-bubble" : "bot-bubble"
             }`}
           >
@@ -62,7 +62,7 @@ const ChatBot = () => {
           onChange={(e) => setQuery(e.target.value)}
           onKeyPress={handleKeyPress}
         ></input>
-        <buttom onclick={handleChat}>Enviar</buttom>
+        <button onClick={handleChat}>Enviar</button>
       </div>
     </div>
   );
