@@ -20,7 +20,12 @@ const ChatBot = () => {
   const colors = ["#FFB6C1", "#87CEFA", "#90EE90", "#FFFFE0", "#FFDEAD", "#D8BFD8"];
   
 
+
+  // colocar colores al fondo del mensaje
+ 
   //proceso para preguntar y que el servidor responda
+
+
 
   const handleChat = () => {
     if (!query.trim()) return;
@@ -29,7 +34,7 @@ const ChatBot = () => {
     const found = chats.find(
       (chat) => chat.question.toLowerCase() === query.toLowerCase()
     );
-
+    setTimeout(() =>{
     setMessages((prev) => [
       ...prev,
       {
@@ -37,8 +42,12 @@ const ChatBot = () => {
         text: found ? found.answer : "no encontre respuesta adecuada",
       },
     ]);
+    }, 1000);
     setQuery("");
   };
+
+
+
   //capturar solisitud mediante enter
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -51,7 +60,7 @@ const ChatBot = () => {
         {messages.map((msg, idx) => (
           <div
             key={idx}
-            className={`message.bubble ${
+            className={`message-bubble ${
               msg.role === "user" ? "user-bubble" : "bot-bubble"
             }`}
 
@@ -73,7 +82,7 @@ const ChatBot = () => {
           onChange={(e) => setQuery(e.target.value)}
           onKeyPress={handleKeyPress}
         ></input>
-        <buttom onclick={handleChat}>Enviar</buttom>
+        <button onClick={handleChat}>Enviar</button>
       </div>
     </div>
   );
