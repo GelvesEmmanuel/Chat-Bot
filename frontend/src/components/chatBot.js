@@ -13,6 +13,12 @@ const ChatBot = () => {
       .then((res) => setChats(res.data))
       .catch((err) => console.error(err));
   }, []);
+  //
+
+  
+// crear una constante para poner un color de fondo aleatorio al chat 
+  const colors = ["#FFB6C1", "#87CEFA", "#90EE90", "#FFFFE0", "#FFDEAD", "#D8BFD8"];
+  
 
   //proceso para preguntar y que el servidor responda
 
@@ -48,6 +54,11 @@ const ChatBot = () => {
             className={`message.bubble ${
               msg.role === "user" ? "user-bubble" : "bot-bubble"
             }`}
+
+            //llamar la constante para cambiar color
+        style={{ backgroundColor: colors[idx % colors.length] }}
+
+           
           >
             {msg.text}
           </div>
